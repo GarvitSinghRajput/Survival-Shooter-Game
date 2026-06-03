@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f6f711de68dc33408be978b4c7d6674, type: 3}
+  m_Name: New Save Pipeline
+  m_EditorClassIdentifier: 
+  modules:
+  - {fileID: 11400000, guid: c5f6599e4e723f8489bbb6f636c34896, type: 2}
+  - {fileID: 11400000, guid: 24af687131c46144b89e4535da1e3f8a, type: 2}

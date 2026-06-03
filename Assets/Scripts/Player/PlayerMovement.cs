@@ -6,6 +6,8 @@ public class PlayerMovement : MonoBehaviour
  
 	public float speed = 6f;
 
+	public static Vector3 playerPosition = Vector3.zero; // Added for saving/loading position
+
 	Vector3 movement;
 	Animator animator;
 	Rigidbody playerRigidbody;
@@ -17,6 +19,19 @@ public class PlayerMovement : MonoBehaviour
 		floorMask = LayerMask.GetMask ("Floor");
 		animator = GetComponent<Animator> ();
 		playerRigidbody = GetComponent<Rigidbody> ();
+	}
+
+	private void Start() {
+		// Load player position if it exists
+		if (playerPosition != Vector3.zero) {
+			transform.position = playerPosition;
+		}
+	}
+
+	public void ResetPosition()
+	{
+		transform.position = Vector3.zero;
+		playerPosition = Vector3.zero;
 	}
 
 	void FixedUpdate()
@@ -35,6 +50,7 @@ public class PlayerMovement : MonoBehaviour
 		movement = movement.normalized * speed * Time.deltaTime;
 
 		playerRigidbody.MovePosition (transform.position + movement);
+		playerPosition = transform.position; // Update player position for saving
 	}
 
 	void Turning()

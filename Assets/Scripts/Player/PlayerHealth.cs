@@ -91,13 +91,16 @@ public class PlayerHealth : MonoBehaviour
         playerShooting.enabled = false;
     }
 
-
+    /// <summary>
+    /// /// Restarts the current level by resetting player health, score, and reloading the scene.
+    /// NOTE: Shift this script to a GameManager later for better architecture,
+    /// but keeping it here for now to avoid refactoring other scripts that depend on PlayerHealth.
+    /// </summary>
     public void RestartLevel()
     {
         Debug.Log("Restarting level...");
         currentHealth = startingHealth;
         ScoreManager.score = 0;
-        SaveSystem.Save();
         SceneManager.LoadScene(0);
     }
 }
